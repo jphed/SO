@@ -29,11 +29,11 @@ def calcular_tiempo(diccionario):
 
 # Ejemplo de uso con 5 procesos
 diccionario_procesos = {
-    1: {'bursttime': 5, 'arrivaltime': 4},
-    2: {'bursttime': 4, 'arrivaltime': 6},
-    3: {'bursttime': 3, 'arrivaltime': 0},
-    4: {'bursttime': 2, 'arrivaltime': 6},
-    5: {'bursttime': 4, 'arrivaltime': 5}
+    1: {'bursttime': 10, 'arrivaltime': 0},
+    2: {'bursttime': 5, 'arrivaltime': 3},
+    3: {'bursttime': 8, 'arrivaltime': 5},
+    4: {'bursttime': 2, 'arrivaltime': 9},
+    5: {'bursttime': 7, 'arrivaltime': 10}
 }
 
 resultados = calcular_tiempo(diccionario_procesos)
@@ -57,8 +57,8 @@ for resultado in resultados:
     promedio_waiting += resultado['waiting_time']
 
 # Calcular los promedios finales
-promedio_turnaround /= len(resultados)
-promedio_waiting /= len(resultados)
+promedio_turnaround /= len(diccionario_procesos)
+promedio_waiting /= len(diccionario_procesos)
 
-print(f"Promedio Turnaround Time: {promedio_turnaround}")
-print(f"Promedio Waiting Time: {promedio_waiting}")
+print(f"Promedio Turnaround Time: {promedio_turnaround:.1f}")
+print(f"Promedio Waiting Time: {promedio_waiting:.1f}")
